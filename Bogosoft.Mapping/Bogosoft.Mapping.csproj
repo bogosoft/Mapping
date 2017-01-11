@@ -42,10 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DelegateMapperAsync.cs" />
     <Compile Include="EnumerableExtensions.cs" />
-    <Compile Include="LambdaMapper.cs" />
+    <Compile Include="DelegateMapper.cs" />
     <Compile Include="IMap.cs" />
     <Compile Include="IMapAsync.cs" />
+    <Compile Include="MapExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
