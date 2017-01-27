@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Bogosoft.Mapping")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Data type mapping contracts for .NET.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Clayton Roth")]
 [assembly: AssemblyProduct("Bogosoft.Mapping")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
