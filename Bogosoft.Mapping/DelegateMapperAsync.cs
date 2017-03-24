@@ -34,9 +34,9 @@ namespace Bogosoft.Mapping
         /// <returns>
         /// An object of the output type.
         /// </returns>
-        public async Task<TOut> MapAsync(TIn input, CancellationToken token)
+        public Task<TOut> MapAsync(TIn input, CancellationToken token)
         {
-            return await @delegate.Invoke(input, token);
+            return @delegate.Invoke(input, token);
         }
     }
 }

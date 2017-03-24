@@ -20,9 +20,9 @@ namespace Bogosoft.Mapping
         /// <returns>
         /// An object of the output type.
         /// </returns>
-        public static async Task<TOut> MapAsync<TIn, TOut>(this IMapAsync<TIn> mapper, TIn input)
+        public static Task<TOut> MapAsync<TIn, TOut>(this IMapAsync<TIn> mapper, TIn input)
         {
-            return await mapper.MapAsync<TOut>(input, CancellationToken.None);
+            return mapper.MapAsync<TOut>(input, CancellationToken.None);
         }
 
         /// <summary>
@@ -37,9 +37,9 @@ namespace Bogosoft.Mapping
         /// <returns>
         /// An object of the output type.
         /// </returns>
-        public static async Task<TOut> MapAsync<TIn, TOut>(this IMapAsync<TIn, TOut> mapper, TIn input)
+        public static Task<TOut> MapAsync<TIn, TOut>(this IMapAsync<TIn, TOut> mapper, TIn input)
         {
-            return await mapper.MapAsync(input, CancellationToken.None).ConfigureAwait(false);
+            return mapper.MapAsync(input, CancellationToken.None);
         }
     }
 }
