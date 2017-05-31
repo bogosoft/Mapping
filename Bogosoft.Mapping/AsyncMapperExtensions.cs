@@ -6,7 +6,7 @@ namespace Bogosoft.Mapping
     /// <summary>
     /// Extended functionality for the <see cref="IMapAsync{TIn}"/> and <see cref="IMapAsync{TIn, TOut}"/> contracts.
     /// </summary>
-    public static class MapExtensions
+    public static class AsyncMapperExtensions
     {
         /// <summary>
         /// Map an object of the input type to an object a given output type. Calling this method is equivalent to calling

@@ -5,25 +5,30 @@ using System.Threading.Tasks;
 namespace Bogosoft.Mapping
 {
     /// <summary>
-    /// An implementation of <see cref="IMapAsync{TIn, TOut}"/> that relies on an internal delegate
-    /// to map an object of one type to an object of another.
+    /// An implementation of <see cref="IMapAsync{TIn, TOut}"/> that relies on a
+    /// given delegate to map an object of one type to an object of another.
     /// </summary>
     /// <typeparam name="TIn">The type of the input object.</typeparam>
     /// <typeparam name="TOut">The type of the output object.</typeparam>
     public sealed class DelegateMapperAsync<TIn, TOut> : IMapAsync<TIn, TOut>
     {
-        private Func<TIn, CancellationToken, Task<TOut>> @delegate;
+        private MapperAsync<TIn, TOut> @delegate;
 
         /// <summary>Create a new mapping strategy from a delegate.</summary>
         /// <param name="delegate">A delegate.</param>
         public DelegateMapperAsync(Func<TIn, Task<TOut>> @delegate)
         {
-            this.@delegate = async (input, token) => await @delegate.Invoke(input);
+            this.@delegate = (input, token) =>
+            {
+                token.ThrowIfCancellationRequested();
+
+                return @delegate.Invoke(input);
+            };
         }
 
         /// <summary>Create a new mapping strategy from a delegate.</summary>
         /// <param name="delegate">A delegate.</param>
-        public DelegateMapperAsync(Func<TIn, CancellationToken, Task<TOut>> @delegate)
+        public DelegateMapperAsync(MapperAsync<TIn, TOut> @delegate)
         {
             this.@delegate = @delegate;
         }
