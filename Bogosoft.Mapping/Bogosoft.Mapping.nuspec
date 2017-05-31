@@ -6,7 +6,7 @@
 		<id>$id$</id>
 		<owners>$author$</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<title>$id</title>
+		<title>$id$</title>
 		<version>$version$</version>
 	</metadata>
 </package>
