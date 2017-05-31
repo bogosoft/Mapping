@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Bogosoft.Mapping
+﻿namespace Bogosoft.Mapping
 {
     /// <summary>
     /// An implementation of <see cref="IMap{TIn, TOut}"/> that relies on an internal
@@ -10,13 +8,13 @@ namespace Bogosoft.Mapping
     /// <typeparam name="TOut">The type of the output object.</typeparam>
     public sealed class DelegateMapper<TIn, TOut> : IMap<TIn, TOut>
     {
-        private Func<TIn, TOut> @delegate;
+        private Mapper<TIn, TOut> @delegate;
 
         /// <summary>
         /// Create a new mapping strategy from a delegate.
         /// </summary>
         /// <param name="delegate">A delegate.</param>
-        public DelegateMapper(Func<TIn, TOut> @delegate)
+        public DelegateMapper(Mapper<TIn, TOut> @delegate)
         {
             this.@delegate = @delegate;
         }
