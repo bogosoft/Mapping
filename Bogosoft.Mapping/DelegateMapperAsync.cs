@@ -12,7 +12,7 @@ namespace Bogosoft.Mapping
     /// <typeparam name="TOut">The type of the output object.</typeparam>
     public sealed class DelegateMapperAsync<TIn, TOut> : IMapAsync<TIn, TOut>
     {
-        private MapperAsync<TIn, TOut> @delegate;
+        private AsyncMapper<TIn, TOut> @delegate;
 
         /// <summary>Create a new mapping strategy from a delegate.</summary>
         /// <param name="delegate">A delegate.</param>
@@ -28,7 +28,7 @@ namespace Bogosoft.Mapping
 
         /// <summary>Create a new mapping strategy from a delegate.</summary>
         /// <param name="delegate">A delegate.</param>
-        public DelegateMapperAsync(MapperAsync<TIn, TOut> @delegate)
+        public DelegateMapperAsync(AsyncMapper<TIn, TOut> @delegate)
         {
             this.@delegate = @delegate;
         }

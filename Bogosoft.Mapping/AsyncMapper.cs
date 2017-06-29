@@ -13,5 +13,5 @@ namespace Bogosoft.Mapping
     /// <returns>
     /// An object of the output type.
     /// </returns>
-    public delegate Task<TOut> MapperAsync<TIn, TOut>(TIn input, CancellationToken token);
+    public delegate Task<TOut> AsyncMapper<TIn, TOut>(TIn input, CancellationToken token);
 }
