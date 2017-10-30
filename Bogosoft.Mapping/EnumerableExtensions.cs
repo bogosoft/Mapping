@@ -2,10 +2,14 @@
 
 namespace Bogosoft.Mapping
 {
-    /// <summary>Mapping-specific extended functionality for enumerable types.</summary>
+    /// <summary>
+    /// Mapping-specific extended functionality for enumerable types.
+    /// </summary>
     public static class EnumerableExtensions
     {
-        /// <summary>Project each element of a sequence into a new form.</summary>
+        /// <summary>
+        /// Project each element of a sequence into a new form.
+        /// </summary>
         /// <typeparam name="TSource">The type of each element in the sequence.</typeparam>
         /// <typeparam name="TResult">The projection type.</typeparam>
         /// <param name="source">The current sequence of values.</param>
