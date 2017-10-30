@@ -47,6 +47,7 @@
     <Compile Include="IMapAsync.cs" />
     <Compile Include="AsyncMapperExtensions.cs" />
     <Compile Include="AsyncMapper.cs" />
+    <Compile Include="IMapAsyncExtensions.cs" />
     <Compile Include="MapperExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
