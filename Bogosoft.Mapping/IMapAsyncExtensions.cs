@@ -9,7 +9,7 @@ namespace Bogosoft.Mapping
     public static class IMapAsyncExtensions
     {
         /// <summary>
-        /// Map an object of the input type to an object a given output type.
+        /// Map an object of the input type to an object of a given output type.
         /// </summary>
         /// <typeparam name="TIn">The type of the input object.</typeparam>
         /// <typeparam name="TOut">The type of the output object.</typeparam>
@@ -21,6 +21,21 @@ namespace Bogosoft.Mapping
         public static Task<TOut> MapAsync<TIn, TOut>(this IMapAsync<TIn> mapper, TIn input)
         {
             return mapper.MapAsync<TOut>(input, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Map an object of the input type to an object of the output type.
+        /// </summary>
+        /// <typeparam name="TIn">The type of the input object.</typeparam>
+        /// <typeparam name="TOut">The type of the output object.</typeparam>
+        /// <param name="mapper">The current <see cref="IMapAsync{TIn, TOut}"/> implementation.</param>
+        /// <param name="input">An object of the input type.</param>
+        /// <returns>
+        /// An object of the output type.
+        /// </returns>
+        public static Task<TOut> MapAsync<TIn, TOut>(this IMapAsync<TIn, TOut> mapper, TIn input)
+        {
+            return mapper.MapAsync(input, CancellationToken.None);
         }
     }
 }
