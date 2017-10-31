@@ -9,7 +9,7 @@ namespace Bogosoft.Mapping
     public static class IMapAsyncExtensions
     {
         /// <summary>
-        /// Map an object of the input type to an object a given output type.
+        /// Map an object of the input type to an object of a given output type.
         /// </summary>
         /// <typeparam name="TIn">The type of the input object.</typeparam>
         /// <typeparam name="TOut">The type of the output object.</typeparam>
