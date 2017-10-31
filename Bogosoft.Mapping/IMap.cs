@@ -4,7 +4,7 @@
     /// Indicates that an implementation is capable of mapping an object of an input type to an object of an output type.
     /// </summary>
     /// <typeparam name="TIn">The input type.</typeparam>
-    public interface IMap<TIn>
+    public interface IMap<in TIn>
     {
         /// <summary>
         /// Map an object of the input type to an object of a given output type.
@@ -22,7 +22,7 @@
     /// </summary>
     /// <typeparam name="TIn">The input type.</typeparam>
     /// <typeparam name="TOut">The output type.</typeparam>
-    public interface IMap<TIn, TOut>
+    public interface IMap<in TIn, out TOut>
     {
         /// <summary>
         /// Map an object of the input type to an object of the output type.
