@@ -22,5 +22,20 @@ namespace Bogosoft.Mapping
         {
             return mapper.MapAsync<TOut>(input, CancellationToken.None);
         }
+
+        /// <summary>
+        /// Map an object of the input type to an object of the output type.
+        /// </summary>
+        /// <typeparam name="TIn">The type of the input object.</typeparam>
+        /// <typeparam name="TOut">The type of the output object.</typeparam>
+        /// <param name="mapper">The current <see cref="IMapAsync{TIn, TOut}"/> implementation.</param>
+        /// <param name="input">An object of the input type.</param>
+        /// <returns>
+        /// An object of the output type.
+        /// </returns>
+        public static Task<TOut> MapAsync<TIn, TOut>(this IMapAsync<TIn, TOut> mapper, TIn input)
+        {
+            return mapper.MapAsync(input, CancellationToken.None);
+        }
     }
 }
